@@ -1,4 +1,4 @@
-import { SET_INPUT_VALUE } from 'src/actions';
+import { SET_INPUT_VALUE, ADD_MESSAGE } from 'src/actions';
 
 const initialState = {
   messages: [
@@ -18,6 +18,18 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         newMessage: action.value,
       };
+    case ADD_MESSAGE: {
+      const message = {
+        id: 2,
+        author: 'Jean',
+        content: state.newMessage,
+      };
+      const messages = [
+        ...state.messages,
+        message,
+      ];
+      return { ...state, messages };
+    }
     default:
       return state;
   }
