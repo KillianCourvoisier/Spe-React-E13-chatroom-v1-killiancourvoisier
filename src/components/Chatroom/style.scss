@@ -6,4 +6,7 @@
     max-width: 600px;
     height: 100vh;
     background-color: v.$color-alt;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
 }

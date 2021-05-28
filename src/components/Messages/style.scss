@@ -1,5 +1,25 @@
 @use 'src/styles/vars' as v;
 
 .messages{
+    padding: v.$gutter * 2;
     
+}
+
+.message{
+    &__author{
+        font-size: .8em;
+        margin-bottom: v.$gutter;
+        margin-left: v.$gutter * 1.5;
+
+    }
+    &__content {
+        background-color: white;
+        padding : v.$gutter * 1.5;
+        border-radius: 30px;
+        color: v.$color-text;
+        margin-bottom: 2* v.$gutter;
+        min-width: 150px;
+        display: inline-block;
+        font-size: 1em;
+    }
 }
