@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import Messages from 'src/components/Messages';
+import Messages from 'src/containers/Messages';
 import Form from 'src/components/Form';
 
 const Chatroom = () => (

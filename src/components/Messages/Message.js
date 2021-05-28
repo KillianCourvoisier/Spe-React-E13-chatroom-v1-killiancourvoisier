@@ -1,11 +1,16 @@
 import React from 'react';
-import './style.scss';
+import PropTypes from 'prop-types';
 
-const Message = () => (
+const Message = ({ author, content }) => (
   <div>
-    <p className="message__author">Super chat</p>
-    <p className="message__content">Salut gros, bien ou bien ?</p>
+    <p className="message__author">{author}</p>
+    <p className="message__content">{content}</p>
   </div>
 );
+
+Message.propTypes = {
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
 
 export default Message;
