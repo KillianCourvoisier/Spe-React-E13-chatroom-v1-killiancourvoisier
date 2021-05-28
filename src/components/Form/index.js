@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
 const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   const handleOnChange = (event) => {
     onChangeInputValue(event.target.value);
   };
@@ -17,6 +23,7 @@ const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
   return (
     <form className="form" onSubmit={handleOnSubmit}>
       <input
+        ref={inputRef}
         className="form__input"
         type="text"
         placeholder="Saisissez votre message"
