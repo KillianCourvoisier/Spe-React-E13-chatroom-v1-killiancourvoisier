@@ -1,4 +1,4 @@
-import { SET_INPUT_VALUE, ADD_MESSAGE } from 'src/actions';
+import { SET_INPUT_VALUE, ADD_MESSAGE, TOGGLE_SETTINGS } from 'src/actions';
 import { getHighestId } from 'src/selectors';
 
 const initialState = {
@@ -10,6 +10,7 @@ const initialState = {
     },
   ],
   newMessage: '',
+  open: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -30,6 +31,9 @@ const reducer = (state = initialState, action = {}) => {
         message,
       ];
       return { ...state, messages, newMessage: '' };
+    }
+    case TOGGLE_SETTINGS: {
+      return { ...state, open: !state.open };
     }
     default:
       return state;

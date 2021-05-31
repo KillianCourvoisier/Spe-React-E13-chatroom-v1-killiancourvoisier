@@ -6,7 +6,7 @@
     padding-right: v.$gutter;
     width: 200px;
     transform: translateX(100%);
-    transition: transform 500ms  ease-in-out;
+    transition: transform 300ms  ease-in-out;
     right: 0;
     &--open{
         transform: translateX(0);
