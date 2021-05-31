@@ -11,6 +11,11 @@ const initialState = {
   ],
   newMessage: '',
   open: true,
+  user: {
+    email: '',
+    password: '',
+    pseudo: 'Anonymous',
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {

@@ -14,12 +14,14 @@
             transform: rotate(45deg);
         }
     }
-    &__input, &__submit{
+    &__submit{
         width: 100%;
         border: none;
         border-radius: 3px;
         margin-bottom: v.$gutter /2;
         padding: .5rem;
+        background-color: v.$color-settings;
+        color: white;
     }
     &__button {
         position: absolute;
@@ -30,12 +32,5 @@
         height: 30px;
         color: v.$color-settings;
         font-size : 1.5em;
-    }
-    &__form {
-
-    }
-    &__submit{
-        background-color: v.$color-settings;
-        color: white;
     }
 }

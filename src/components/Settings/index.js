@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Field from 'src/components/Field';
 import './style.scss';
 
 const Settings = ({ open, onClickButton }) => {
@@ -17,15 +18,15 @@ const Settings = ({ open, onClickButton }) => {
         +
       </button>
       <form className="settings__form">
-        <input
+        <Field
           type="email"
-          placeholder="Email"
-          className="settings__input"
+          label="Email"
+          name="email"
         />
-        <input
+        <Field
           type="password"
-          placeholder="Password"
-          className="settings__input"
+          label="Password"
+          name="password"
         />
         <button
           type="submit"
