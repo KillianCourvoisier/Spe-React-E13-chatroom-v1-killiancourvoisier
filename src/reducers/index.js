@@ -1,4 +1,9 @@
-import { SET_INPUT_VALUE, ADD_MESSAGE, TOGGLE_SETTINGS } from 'src/actions';
+import {
+  SET_INPUT_VALUE,
+  ADD_MESSAGE,
+  TOGGLE_SETTINGS,
+  CHANGE_INPUT_VALUE,
+} from 'src/actions';
 import { getHighestId } from 'src/selectors';
 
 const initialState = {
@@ -40,6 +45,14 @@ const reducer = (state = initialState, action = {}) => {
     case TOGGLE_SETTINGS: {
       return { ...state, open: !state.open };
     }
+    case CHANGE_INPUT_VALUE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [action.name]: action.value,
+        },
+      };
     default:
       return state;
   }
