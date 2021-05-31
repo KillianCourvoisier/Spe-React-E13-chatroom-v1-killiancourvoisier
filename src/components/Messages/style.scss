@@ -1,40 +1,37 @@
 @use 'src/styles/vars' as v;
 
-.messages{
-    padding: v.$gutter * 2;
-    overflow: auto;
-    
+.messages {
+  padding: v.$gutter * 2;
+  overflow: auto;
 }
 
-.message{
-    
-    &__author{
-        font-size: .8em;
-        margin-bottom: v.$gutter;
-        margin-left: v.$gutter * 1.5;
-
-    }
-    &__content {
-        animation: pop .3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        background-color: white;
-        padding : v.$gutter * 1.5;
-        border-radius: 30px;
-        color: v.$color-text;
-        margin-bottom: 2* v.$gutter;
-        min-width: 150px;
-        display: inline-block;
-        font-size: 1em;
-    }
+.message {
+  &__author {
+    font-size: .8em;
+    margin-bottom: v.$gutter;
+    margin-left: v.$gutter * 1.5;
+  }
+  &__content {
+    animation: pop .5s cubic-bezier(0,0,.58,1);
+    background-color: white;
+    padding: v.$gutter * 1.5;
+    border-radius: 30px;
+    color: v.$color-text;
+    margin-bottom: 2 * v.$gutter;
+    min-width: 150px;
+    display: inline-block;
+    font-size: 1em;
+  }
 }
-
+// https://cubic-bezier.com/#0,0,.58,1
+// https://easings.net/fr
 @keyframes pop {
-    from {
-        transform: scale(0);
-        opacity: 0,
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-
-    }
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

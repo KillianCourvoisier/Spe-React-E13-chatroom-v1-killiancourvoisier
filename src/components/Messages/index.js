@@ -10,9 +10,11 @@ const Messages = ({ messages }) => (
 );
 
 Messages.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-  })).isRequired,
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  ).isRequired,
 };
 
 export default Messages;
