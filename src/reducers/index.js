@@ -17,6 +17,7 @@ const initialState = {
     password: '',
     pseudo: 'Anonyme',
   },
+  isLogged: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -78,6 +79,8 @@ const reducer = (state = initialState, action = {}) => {
           ...state.user,
           pseudo: action.pseudo,
         },
+        isLogged: true,
+        open: false,
       };
     default:
       return state;

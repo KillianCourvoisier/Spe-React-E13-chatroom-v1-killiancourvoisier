@@ -4,7 +4,13 @@ import Field from 'src/containers/Field';
 
 import './style.scss';
 
-const Settings = ({ open, onClickButton, onSubmitForm }) => {
+const Settings = ({
+  open,
+  onClickButton,
+  onSubmitForm,
+  isLogged,
+  pseudo,
+}) => {
   const handleOnClick = () => {
     onClickButton();
   };
@@ -26,19 +32,26 @@ const Settings = ({ open, onClickButton, onSubmitForm }) => {
       >
         +
       </button>
-      <form className="settings__form" onSubmit={handleOnSubmit}>
-        <Field
-          type="email"
-          label="Email"
-          name="email"
-        />
-        <Field
-          type="password"
-          label="Mot de passe"
-          name="password"
-        />
-        <button type="submit" className="settings__submit">Envoyer</button>
-      </form>
+      {isLogged ? (
+        <div> GoooooodMooooorning {pseudo} !!! </div>
+      ) : (
+        <>
+          <form className="settings__form" onSubmit={handleOnSubmit}>
+            <Field
+              type="email"
+              label="Email"
+              name="email"
+            />
+            <Field
+              type="password"
+              label="Mot de passe"
+              name="password"
+            />
+            <button type="submit" className="settings__submit">Envoyer</button>
+          </form>
+        </>
+      )}
+
     </div>
   );
 };
@@ -47,6 +60,8 @@ Settings.propTypes = {
   open: PropTypes.bool.isRequired,
   onClickButton: PropTypes.func.isRequired,
   onSubmitForm: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  pseudo: PropTypes.string.isRequired,
 };
 
 export default Settings;

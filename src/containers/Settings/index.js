@@ -4,6 +4,8 @@ import { toggleSettings, login } from 'src/actions';
 
 const mapStateToProps = (state) => ({
   open: state.open,
+  isLogged: state.isLogged,
+  pseudo: state.user.pseudo,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -12,7 +14,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   onSubmitForm: () => {
-    console.log('je veux envoyer une requête');
     dispatch(login());
   },
 });
