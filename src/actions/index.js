@@ -14,8 +14,9 @@ export const setInputValue = (value) => ({
   value,
 });
 
-export const addMessage = () => ({
+export const addMessage = (message) => ({
   type: ADD_MESSAGE,
+  message,
 });
 
 export const toggleSettings = () => ({

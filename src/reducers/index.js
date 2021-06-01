@@ -9,21 +9,7 @@ import { getHighestId } from 'src/selectors';
 
 const initialState = {
   messages: [
-    {
-      id: 11,
-      author: 'Super Chat',
-      content: 'lorem ipsum',
-    },
-    {
-      id: 22,
-      author: 'Super Chat',
-      content: 'lorem ipsum',
-    },
-    {
-      id: 3,
-      author: 'Super Chat',
-      content: 'lorem ipsum',
-    },
+
   ],
   newMessage: '',
   open: true,
@@ -50,18 +36,18 @@ const reducer = (state = initialState, action = {}) => {
       // }
 
       // on prépare un nouvel obet à insérer dans le tableau de messages
-      const message = {
-        id: getHighestId(state) + 1,
-        author: state.user.pseudo,
-        content: state.newMessage,
-      };
+      // const message = {
+      //   id: getHighestId(state) + 1,
+      //   author: state.user.pseudo,
+      //   content: state.newMessage,
+      // };
 
       // ici on crée une nouvelle référence de tableau qui
       // viendra les anciens messages du state et on ajoute
       // en dernier le nouveau message
       const messages = [
         ...state.messages,
-        message,
+        action.message,
       ];
 
       return {

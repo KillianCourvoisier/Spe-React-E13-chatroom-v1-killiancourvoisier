@@ -1,4 +1,4 @@
-import { WS_CONNECT, SEND_MESSAGE } from 'src/actions';
+import { WS_CONNECT, SEND_MESSAGE, addMessage } from 'src/actions';
 
 let socket;
 
@@ -8,8 +8,8 @@ const websocket = (store) => (next) => (action) => {
       console.log('websocket');
 
       socket = window.io('http://localhost:3001');
-      socket.on('server_message', (response) => {
-        console.log('message server', response);
+      socket.on('server_message', (message) => {
+        store.dispatch(addMessage(message));
       });
       break;
     }
