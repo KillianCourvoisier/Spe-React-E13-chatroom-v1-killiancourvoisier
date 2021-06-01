@@ -5,8 +5,6 @@ let socket;
 const websocket = (store) => (next) => (action) => {
   switch (action.type) {
     case WS_CONNECT: {
-      console.log('websocket');
-
       socket = window.io('http://localhost:3001');
       socket.on('server_message', (message) => {
         store.dispatch(addMessage(message));

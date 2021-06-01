@@ -5,7 +5,6 @@ import {
   CHANGE_INPUT_VALUE,
   SAVE_PSEUDO,
 } from 'src/actions';
-import { getHighestId } from 'src/selectors';
 
 const initialState = {
   messages: [
@@ -21,7 +20,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
-  console.log('reducer');
   switch (action.type) {
     case SET_INPUT_VALUE:
       return {
