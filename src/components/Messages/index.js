@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
-import Message from './Message';
+import Message from 'src/containers/Message';
 
 const Messages = ({ messages }) => (
   <div className="messages">

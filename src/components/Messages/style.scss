@@ -6,6 +6,12 @@
 }
 
 .message {
+  &--is-mine {
+    text-align: right;
+    .message__author {
+      margin-right: v.$gutter * 1.5;
+    }
+  }
   &__author {
     font-size: .8em;
     margin-bottom: v.$gutter;
