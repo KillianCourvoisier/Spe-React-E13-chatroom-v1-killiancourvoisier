@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Message = ({ author, content, pseudo }) => {
-  const classnames = classNames('message', { 'message--is-mine': author === pseudo });
+const Message = ({ author, content, isMine }) => {
+  const classnames = classNames('message', { 'message--is-mine': isMine });
 
   return (
     <div className={classnames}>
@@ -16,7 +16,7 @@ const Message = ({ author, content, pseudo }) => {
 Message.propTypes = {
   author: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  pseudo: PropTypes.string.isRequired,
+  isMine: PropTypes.bool.isRequired,
 };
 
 export default Message;

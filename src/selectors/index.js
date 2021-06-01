@@ -9,3 +9,5 @@ export const getHighestId = ({ messages }) => {
   // on retourne l'id max
   return Math.max(...ids);
 };
+
+export const isAuthorMessage = (state, author) => state.user.pseudo === author;

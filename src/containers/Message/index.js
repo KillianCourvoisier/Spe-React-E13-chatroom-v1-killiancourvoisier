@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import Message from 'src/components/Messages/Message';
+import { isAuthorMessage } from 'src/selectors';
 
-const mapStateToProps = (state) => ({
-  pseudo: state.user.pseudo,
+const mapStateToProps = (state, ownProps) => ({
+  isMine: isAuthorMessage(state, ownProps.author),
 });
 
 const mapDispatchToProps = (dispatch) => ({});
